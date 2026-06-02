@@ -145,7 +145,7 @@ struct AndroidNormalConfig {
   static const bool QuarantineDisabled = true;
 
   template <class A>
-  using TSDRegistryT = TSDRegistrySharedT<A, 8U, 2U>; // Shared, max 8 TSDs.
+  using TSDRegistryT = TSDRegistrySharedT<A, 8U, 4U>; // Shared, max 8 TSDs.
 
   struct Primary {
     using SizeClassMap = AndroidNormalSizeClassMap;
@@ -175,11 +175,11 @@ struct AndroidNormalConfig {
     struct Cache {
       static const u32 EntriesArraySize = 256U;
       static const u32 QuarantineSize = 0U;
-      static const u32 DefaultMaxEntriesCount = 32U;
-      static const uptr DefaultMaxEntrySize = 2UL << 20;
+      static const u32 DefaultMaxEntriesCount = 64U;
+      static const uptr DefaultMaxEntrySize = 1UL << 20;
       static const s32 MinReleaseToOsIntervalMs = -1;
       static const s32 MaxReleaseToOsIntervalMs = 1000;
-      static const s32 DefaultReleaseToOsIntervalMs = 0;
+      static const s32 DefaultReleaseToOsIntervalMs = 1000;
     };
     template <typename Config> using CacheT = MapAllocatorCache<Config>;
 #if !defined(__LP64__)
