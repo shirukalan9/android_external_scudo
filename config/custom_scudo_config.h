@@ -153,7 +153,7 @@ struct AndroidNormalConfig {
     static const uptr RegionSizeLog = 28U;
     typedef u32 CompactPtrT;
     static const uptr CompactPtrScale = SCUDO_MIN_ALIGNMENT_LOG;
-    static const uptr GroupSizeLog = 20U;
+    static const uptr GroupSizeLog = 21U;
     static const bool EnableRandomOffset = false;
     static const uptr MapSizeIncrement = 1UL << 19;
 #else
