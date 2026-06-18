@@ -229,6 +229,15 @@ cc_library {
         "com.android.runtime",
     ],
 }
+        bionic: {
+            cflags: [
+                // Only enable tracing for the libc part of the library.
+                "-DSCUDO_ENABLE_TRACING",
+            ],
+            include_dirs: [
+                "bionic/libc",
+            ],
+        },
 
 cc_library_static {
     name: "libscudo_for_testing",
